@@ -9,7 +9,7 @@ import Icon from './Icon.vue'
     </h1>
     <div class="header-extra">
       <Icon icon="search" />
-      <img class="header-avatar" src="../assets/logo.png" />
+      <img class="header-avatar" src="../assets/avatar.png" />
       <button class="header-download">下载 App</button>
     </div>
   </div>
