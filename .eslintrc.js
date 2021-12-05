@@ -9,6 +9,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    'vue/setup-compiler-macros': true, // Vue3的全局变量
   },
   extends: [
     'eslint:recommended',
@@ -16,10 +17,4 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'plugin:prettier/recommended',
   ],
-  /*  globals: {
-    defineProps: 'readonly',
-    defineEmits: 'readonly',
-    defineExpose: 'readonly',
-  }, */
-  // rules: {},
 }
