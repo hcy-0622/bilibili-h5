@@ -46,7 +46,7 @@ import Icon from './Icon.vue'
   border: none;
   border-radius: 8px;
   padding: 12px 20px;
-  color: white;
+  color: #fff;
   background-color: var(--primary-color);
 }
 </style>
