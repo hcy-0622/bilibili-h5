@@ -22,6 +22,7 @@ specifiers:
   vite: ^2.6.4
   vue: ^3.2.16
   vue-eslint-parser: ^8.0.1
+  vue-router: '4'
   vue-tsc: ^0.3.0
 
 dependencies:
@@ -29,6 +30,7 @@ dependencies:
   axios: registry.npmmirror.com/axios/0.24.0
   normalize.css: registry.nlark.com/normalize.css/8.0.1
   vue: registry.npmmirror.com/vue/3.2.23
+  vue-router: registry.npmmirror.com/vue-router/4.0.12_vue@3.2.23
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.5.0_b885794d89d00e0b80d68a1b7275fb2c
@@ -2047,6 +2049,12 @@ packages:
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.23
     dev: false
 
+  registry.npmmirror.com/@vue/devtools-api/6.0.0-beta.20.1:
+    resolution: {integrity: sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.20.1.tgz}
+    name: '@vue/devtools-api'
+    version: 6.0.0-beta.20.1
+    dev: false
+
   registry.npmmirror.com/@vue/reactivity/3.2.23:
     resolution: {integrity: sha512-8RGVr/5Kpgb/EkCjgHXqttgA5IMc6n0lIXFY4TVbMkzdXrvaIhzBd7Te44oIDsTSYVKZLpfHd6/wEnuDqE8vFw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/reactivity/download/@vue/reactivity-3.2.23.tgz}
     name: '@vue/reactivity'
@@ -3207,6 +3215,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  registry.npmmirror.com/vue-router/4.0.12_vue@3.2.23:
+    resolution: {integrity: sha1-jceSzd9bsavMOQj5BkE23n4TxGA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-router/download/vue-router-4.0.12.tgz}
+    id: registry.npmmirror.com/vue-router/4.0.12
+    name: vue-router
+    version: 4.0.12
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api/6.0.0-beta.20.1
+      vue: registry.npmmirror.com/vue/3.2.23
+    dev: false
 
   registry.npmmirror.com/vue-tsc/0.3.0_typescript@4.5.2:
     resolution: {integrity: sha1-Ozhyv08dLkQJtXrb2CYDLiU9tAY=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-tsc/download/vue-tsc-0.3.0.tgz}
