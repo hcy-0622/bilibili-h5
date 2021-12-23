@@ -60,22 +60,24 @@ useOutsideClick(tabsRef, () => {
       <Icon icon="arrow-down" class="tabs-icon" @click="panelVisible = true" />
     </div>
 
-    <transition
-      name="fade"
-      enter-active-class="animate__animated animate__slideInDown"
-      leave-active-class="animate__animated animate__slideOutUp"
-    >
-      <div v-if="panelVisible" class="tab-bar-panel">
-        <ul class="tabs panel-tabs">
-          <li v-for="c of data.categories" :key="c.id" class="tab panel-tab">
-            {{ c.name }}
-          </li>
-        </ul>
-        <div class="panel-collapse">
-          <Icon icon="arrow-down" class="tabs-icon panel-collapse-icon" @click="panelVisible = false" />
+    <teleport to="body">
+      <transition
+        name="fade"
+        enter-active-class="animate__animated animate__slideInDown"
+        leave-active-class="animate__animated animate__slideOutUp"
+      >
+        <div v-if="panelVisible" class="tab-bar-panel">
+          <ul class="tabs panel-tabs">
+            <li v-for="c of data.categories" :key="c.id" class="tab panel-tab">
+              {{ c.name }}
+            </li>
+          </ul>
+          <div class="panel-collapse">
+            <Icon icon="arrow-down" class="tabs-icon panel-collapse-icon" @click="panelVisible = false" />
+          </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </teleport>
   </div>
 </template>
 <style scoped>
