@@ -10,7 +10,6 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.1.1
-  faker: ^5.5.3
   mocker-api: ^2.9.4
   mockjs: ^1.1.0
   normalize.css: ^8.0.1
@@ -40,7 +39,6 @@ devDependencies:
   eslint-config-prettier: registry.nlark.com/eslint-config-prettier/8.3.0_eslint@8.4.0
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.0.0_14354588a145aaef8cc0e524e93c2ca4
   eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/8.1.1_eslint@8.4.0
-  faker: registry.nlark.com/faker/5.5.3
   mocker-api: registry.npmmirror.com/mocker-api/2.9.4
   mockjs: 1.1.0
   postcss-flexbugs-fixes: registry.nlark.com/postcss-flexbugs-fixes/5.0.2
@@ -779,12 +777,6 @@ packages:
     name: esutils
     version: 2.0.3
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  registry.nlark.com/faker/5.5.3:
-    resolution: {integrity: sha1-xXl07khEMbJSBcLI3An9qGHlHg4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/faker/download/faker-5.5.3.tgz}
-    name: faker
-    version: 5.5.3
     dev: true
 
   registry.nlark.com/fast-deep-equal/3.1.3:

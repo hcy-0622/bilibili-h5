@@ -1,7 +1,5 @@
 const delay = require('mocker-api/lib/delay')
-const faker = require('faker')
 
-faker.locale = 'zh_CN'
 function loadData(data) {
   const result = {}
   Object.keys(data).forEach((key) => {
@@ -12,6 +10,7 @@ function loadData(data) {
 const prefix = '/api/v1'
 const proxy = loadData({
   [`GET ${prefix}/categories`]: './apis/categories',
+  [`GET ${prefix}/videos`]: './apis/videos',
 })
 
 const noProxy = process.env.NO_PROXY === 'true'
