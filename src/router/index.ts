@@ -5,6 +5,5 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
-// TODO: 123
-// FIXME:
+
 export default router

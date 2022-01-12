@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import Icon from './Icon.vue'
+
+const router = useRouter()
 </script>
 
 <template>
@@ -8,7 +11,7 @@ import Icon from './Icon.vue'
       <Icon icon="bilibili" />
     </h1>
     <div class="header-extra">
-      <Icon icon="search" />
+      <Icon icon="search" @click="router.push('/search')" />
       <img class="header-avatar" src="../assets/avatar.png" />
       <button class="header-download">下载 App</button>
     </div>

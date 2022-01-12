@@ -11,6 +11,7 @@ const prefix = '/api/v1'
 const proxy = loadData({
   [`GET ${prefix}/categories`]: './apis/categories',
   [`GET ${prefix}/videos`]: './apis/videos',
+  [`GET ${prefix}/hot_search`]: './apis/hotSearch',
 })
 
 const noProxy = process.env.NO_PROXY === 'true'

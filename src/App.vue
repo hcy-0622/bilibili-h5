@@ -4,8 +4,8 @@ import TabBar from '@/components/tabs/TabBar.vue'
 import StickyBar from '@/components/StickyBar.vue'
 </script>
 <template>
-  <Header />
-  <TabBar />
+  <!-- <Header /> -->
+  <!-- <TabBar /> -->
   <router-view></router-view>
-  <StickyBar />
+  <!-- <StickyBar /> -->
 </template>

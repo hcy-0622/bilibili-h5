@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getVideos } from '@/apis'
-import { watch, watchEffect } from 'vue'
+import { watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -15,7 +15,7 @@ watchEffect(() => {
 })
 </script>
 <template>
-  <div class="channel-container">Channel 页面</div>
+  <div style="margin-top: 40px">Channel View</div>
 </template>
 <style scoped>
 .channel-container {

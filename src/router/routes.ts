@@ -1,21 +1,30 @@
 import { RouteRecordRaw } from 'vue-router'
-
 import Home from '../views/home/Home.vue'
-import Channel from '../views/channel/Channel.vue'
-import Demo from '../views/demo/Demo.vue'
+import HomeDefault from '../views/home/default/HomeDefault.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: Home,
+    children: [
+      {
+        path: '',
+        component: HomeDefault,
+      },
+      {
+        path: 'channel/:id/:subId?',
+        component: import('../views/home/channel/HomeChannel.vue'),
+      },
+    ],
   },
   {
-    path: '/channel/:id/:subId?',
-    component: Channel,
+    path: '/search',
+    component: () => import('../views/search/Search.vue'),
+    props: (route) => ({ keyword: route.query.keyword }),
   },
   {
     path: '/demo',
-    component: Demo,
+    component: () => import('../views/demo/Demo.vue'),
   },
 ]
 
