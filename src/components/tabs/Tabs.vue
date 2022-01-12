@@ -2,14 +2,15 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Icon from '../Icon.vue'
-import useTabBarData from './useTabBarData'
+import TabsPanel from './TabsPanel.vue'
+import useTabsData from './useTabsData'
 import useOutsideClick from './useOutsideClick'
 import useRouteParams from './useRouteParams'
 
 const panelVisible = ref(false)
 const tabsRef = ref<HTMLDivElement>()
 const router = useRouter()
-const data = useTabBarData()
+const data = useTabsData()
 const { routeId, routeSubId } = useRouteParams()
 
 const tabItemClick = (id: number) => {
@@ -24,13 +25,13 @@ const subTabItemClick = (id: number, pid: number) => {
 }
 
 useOutsideClick(tabsRef, () => {
-  panelVisible.value = false
+  // panelVisible.value = false
 })
 </script>
 <template>
-  <div ref="tabsRef" class="tab-bar-container">
+  <div ref="tabsRef" class="tabs-container">
     <div class="tabs-wrapper">
-      <ul class="tabs">
+      <transition-group name="list" tag="ul" class="tabs">
         <li
           v-for="c of data.categories"
           :key="c.id"
@@ -54,34 +55,16 @@ useOutsideClick(tabsRef, () => {
             </ul>
           </div>
         </li>
-      </ul>
+      </transition-group>
     </div>
     <div class="tabs-more">
       <Icon icon="arrow-down" class="tabs-icon" @click="panelVisible = true" />
     </div>
-
-    <teleport to="body">
-      <transition
-        name="fade"
-        enter-active-class="animate__animated animate__slideInDown"
-        leave-active-class="animate__animated animate__slideOutUp"
-      >
-        <div v-if="panelVisible" class="tab-bar-panel">
-          <ul class="tabs panel-tabs">
-            <li v-for="c of data.categories" :key="c.id" class="tab panel-tab">
-              {{ c.name }}
-            </li>
-          </ul>
-          <div class="panel-collapse">
-            <Icon icon="arrow-down" class="tabs-icon panel-collapse-icon" @click="panelVisible = false" />
-          </div>
-        </div>
-      </transition>
-    </teleport>
+    <TabsPanel v-model:visible="panelVisible" :categories="data.categories" />
   </div>
 </template>
 <style scoped>
-.tab-bar-container {
+.tabs-container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -120,38 +103,11 @@ useOutsideClick(tabsRef, () => {
   white-space: nowrap;
   color: #505050;
   font-size: 28px;
+  border-bottom: 5px solid transparent;
+  transition: color, border-color 0.4s ease-out;
 }
 .tab.active {
-  border-bottom: 5px solid var(--primary-color);
+  border-bottom-color: var(--primary-color);
   color: var(--primary-color);
 }
-.tab-bar-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  background: #fff;
-}
-.panel-tabs {
-  display: flex;
-  flex-wrap: wrap;
-}
-.panel-collapse {
-  text-align: center;
-}
-.panel-collapse-icon {
-  transform: rotate(180deg);
-}
-
-/* .tabs-enter-active,
-.tabs-leave-active {
-  transition: all 1s ease;
-}
-.tabs-enter-from,
-.tabs-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-} */
 </style>

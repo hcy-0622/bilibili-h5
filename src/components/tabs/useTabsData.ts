@@ -2,7 +2,7 @@ import { reactive } from 'vue'
 import { getCategories, Category } from '@/apis'
 
 type DataProps = { categories: Category[] }
-export default function useTabBarData(): DataProps {
+export default function useTabsData(): DataProps {
   const data = reactive<DataProps>({
     categories: [],
   })
